@@ -1,12 +1,39 @@
+import { type ExtractValue } from '@quantumqa/types';
+import { Application } from '@quantumqa/types';
 import { z } from 'zod';
-
-export type ExtractValue<T extends object> = T[keyof T];
 
 export const BullQueue = {
   APPLICATION: 'application',
 } as const;
 
 export type BullQueue = ExtractValue<typeof BullQueue>;
+
+export const ApplicationBullJob = z.discriminatedUnion('name', [
+  z.object({
+    name: z.literal('application.accepted'),
+    data: z.object({
+      applicationId: Application.shape.id,
+    }),
+  }),
+  z.object({
+    name: z.literal('application.created'),
+    data: z.object({
+      applicationId: Application.shape.id,
+    }),
+  }),
+  z.object({
+    name: z.literal('application.rejected'),
+    data: z.object({
+      applicationId: Application.shape.id,
+    }),
+  }),
+  z.object({
+    name: z.literal('application.review'),
+    data: z.object({
+      applicationId: Application.shape.id,
+    }),
+  }),
+]);
 
 // Combination
 
