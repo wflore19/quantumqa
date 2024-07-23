@@ -7,7 +7,7 @@ export async function editFeatureFlag(id: string, input: EditFeatureFlagInput) {
     .updateTable('featureFlags')
     .set({
       description: input.description,
-      displayName: input.displayName,
+      name: input.name,
       enabled: input.enabled,
     })
     .where('id', '=', id)
