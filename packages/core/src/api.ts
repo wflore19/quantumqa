@@ -11,6 +11,6 @@ dayjs.extend(timezone);
 
 // This is only meant to be imported by the `api` application.
 export { job } from './infrastructure/bull/helpers/job';
-// export { applicationWorker } from './modules/application/application.worker';
+export { applicationWorker } from './modules/application/application.worker';
 // export { loginWithOAuth } from './modules/authentication/use-cases/login-with-oauth';
 export { Environment } from './utils/types';
