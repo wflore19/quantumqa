@@ -1,10 +1,13 @@
 export { QueueFromName } from './infrastructure/bull/bull';
 export { job } from './infrastructure/bull/helpers/job';
+
 export { listAdmins } from './modules/admin/queries/list-admins';
 export { addAdmin } from './modules/admin/helpers/add-admin';
-// export { getGoogleAuthUri } from './modules/authentication/shared/oauth.utils';
-// export { sendOneTimeCode } from './modules/authentication/helpers/send-one-time-code';
-// export { verifyOneTimeCode } from './modules/authentication/helpers/verify-one-time-code';
+
+export { acceptApplication } from './modules/application/helpers/accept-application';
+export { createApplication } from './modules/application/helpers/create-application';
+export { rejectApplication } from './modules/application/helpers/reject-application';
+
 export { getFeatureFlag } from './modules/feature-flag/queries/get-feature-flag';
 export { listFeatureFlags } from './modules/feature-flag/queries/list-feature-flags';
 export { createFeatureFlag } from './modules/feature-flag/helpers/create-feature-flag';
