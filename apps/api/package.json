@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@quantumqa/core": "*",
+    "@quantumqa/types": "*",
     "@quantumqa/utils": "*",
     "cors": "^2.8.5",
     "dedent": "^0.7.0",
