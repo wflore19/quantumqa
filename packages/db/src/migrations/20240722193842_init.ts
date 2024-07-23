@@ -50,6 +50,9 @@ export async function up(db: Kysely<any>): Promise<void> {
     .addColumn('deleted_at', 'timestamp')
     .addColumn('first_name', 'text', (col) => col.notNull())
     .addColumn('last_name', 'text', (col) => col.notNull())
+    .addColumn('full_name', 'text', (col) =>
+      col.defaultTo(sql`first_name || ' ' || last_name`)
+    )
     .addColumn('email', 'text', (col) => col.notNull().unique())
     .addColumn('gender', 'text', (col) => col.notNull())
     .addColumn('status', 'text', (col) => col.notNull());
