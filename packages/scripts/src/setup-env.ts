@@ -8,9 +8,8 @@ const __filename = fileURLToPath(import.meta.url);
 const monorepoRoot = path.join(__filename, '../../../..');
 
 const exampleFiles = [
-  path.join(monorepoRoot, 'apps/admin-dashboard/.env.example'),
+  path.join(monorepoRoot, 'apps/admin-app/.env.example'),
   path.join(monorepoRoot, 'apps/api/.env.example'),
-  path.join(monorepoRoot, 'apps/member-profile/.env.example'),
   path.join(monorepoRoot, 'packages/core/.env.test.example'),
   path.join(monorepoRoot, 'packages/db/.env.example'),
 ];

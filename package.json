@@ -16,6 +16,7 @@
     "db:migrate": "yarn workspace @quantumqa/db migrate",
     "db:migrate:down": "yarn workspace @quantumqa/db migrate:down",
     "db:migration:create": "yarn workspace @quantumqa/db migration:create",
+    "env:setup": "yarn workspace @quantumqa/scripts env:setup",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
