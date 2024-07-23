@@ -1,0 +1,38 @@
+{
+  "name": "@quantumqa/db",
+  "version": "0.0.0",
+  "description": "quantumqa db package",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./dist/db": "./dist/db.d.ts"
+  },
+  "author": "wflore19",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "kysely-codegen --dialect=postgres --camel-case --out-file=./dist/db.d.ts",
+    "migrate": "tsx ./src/scripts/migrate.ts && yarn build",
+    "migrate:down": "tsx ./src/scripts/migrate.ts --down && yarn build",
+    "migration:create": "tsx ./src/scripts/create-migration.ts",
+    "seed": "tsx ./src/scripts/seed.ts && yarn build",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "kysely": "^0.27.4",
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "@quantumqa/eslint-config": "*",
+    "@quantumqa/tsconfig": "*",
+    "@types/pg": "^8.11.6",
+    "@types/prompt-sync": "^4.2.3",
+    "commander": "^12.1.0",
+    "dedent": "^1.5.3",
+    "kysely-codegen": "^0.15.0",
+    "prompt-sync": "^4.2.0",
+    "tsx": "^4.16.2"
+  }
+}

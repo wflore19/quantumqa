@@ -1,0 +1,10 @@
+{
+  "extends": "@quantumqa/tsconfig/base.json",
+  "include": ["src", "node_modules/dist/db.d.ts"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "types": []
+  }
+}

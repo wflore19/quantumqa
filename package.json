@@ -1,0 +1,36 @@
+{
+  "name": "quantumqa",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "report": "turbo run report",
+    "test": "turbo run test --cache-dir=.turbo",
+    "test:apps": "yarn test && yarn report --filter=./apps/*",
+    "dev": "turbo run dev --cache-dir=.turbo",
+    "dev:apps": "yarn dev --filter=./apps/*",
+    "dx:up": "docker compose up -d",
+    "dx:down": "docker compose down",
+    "dx:nuke": "docker compose down --volumes --remove-orphans",
+    "db:seed": "yarn workspace @quantumqa/db seed",
+    "db:migrate": "yarn workspace @quantumqa/db migrate",
+    "db:migrate:down": "yarn workspace @quantumqa/db migrate:down",
+    "db:migration:create": "yarn workspace @quantumqa/db migration:create",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "turbo": "^2.0.9",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": "^20.0.0"
+  },
+  "packageManager": "yarn@1.22.22",
+  "workspaces": [
+    "apps/*",
+    "config/*",
+    "packages/*"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@quantumqa/tailwind",
+  "version": "0.0.0",
+  "private": true,
+  "main": "tailwind.config.js",
+  "license": "MIT",
+  "dependencies": {
+    "@tailwindcss/container-queries": "^0.1.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "prettier-plugin-tailwindcss": "^0.5.13",
+    "tailwindcss": "^3.4.6"
+  }
+}

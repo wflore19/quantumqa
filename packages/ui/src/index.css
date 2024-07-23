@@ -1,0 +1,38 @@
+/* Elements */
+
+body:has(.lock-scroll) {
+  overflow: hidden;
+}
+
+button,
+input,
+textarea {
+  outline: none;
+}
+
+select {
+  background-image: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>');
+}
+
+/* Classes */
+
+.scrollbar::-webkit-scrollbar {
+  display: block;
+  height: 0.5rem;
+  width: 0.5rem;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: theme('colors.gray.300');
+  border-radius: 1rem;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:active {
+  background-color: theme('colors.gray.500');
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background-color: theme('colors.gray.100');
+  border-radius: 0.5rem;
+  display: block;
+}

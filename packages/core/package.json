@@ -1,0 +1,49 @@
+{
+  "name": "@quantumqa/core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./api": {
+      "import": "./dist/api.js",
+      "require": "./dist/api.cjs",
+      "types": "./dist/api.d.ts"
+    },
+    "./admin-dashboard.server": "./src/admin-dashboard.server.ts",
+    "./admin.server": "./src/modules/admin/index.server.ts"
+  },
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest run",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@quantumqa/db": "*",
+    "@quantumqa/utils": "*",
+    "bullmq": "^4.12.2",
+    "dayjs": "^1.11.5",
+    "dedent": "^0.7.0",
+    "ioredis": "^5.3.2",
+    "is-ip": "^5.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "nanoid": "^3.0.0",
+    "zod": "^3.20.2"
+  },
+  "devDependencies": {
+    "@quantumqa/eslint-config": "*",
+    "@quantumqa/tsconfig": "*",
+    "@quantumqa/ui": "*",
+    "@remix-run/react": "^2.8.1",
+    "@types/bull": "^4.10.0",
+    "@types/dedent": "^0.7.2",
+    "@types/jsonwebtoken": "^9.0.2",
+    "nanoid": "^3.0.0",
+    "react": "^18.2.0",
+    "tsup": "^6.1.3",
+    "vite": "^5.0.0",
+    "vite-tsconfig-paths": "^4.3.1",
+    "vitest": "^1.3.1"
+  }
+}

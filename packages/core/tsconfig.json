@@ -1,0 +1,15 @@
+{
+  "extends": "@quantumqa/tsconfig/base.json",
+  "include": ["src", "../db/kysely-patch.d.ts", "../db/dist/db.d.ts"],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": ["vitest/globals"]
+  }
+}
