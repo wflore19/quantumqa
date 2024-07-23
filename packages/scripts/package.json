@@ -1,0 +1,18 @@
+{
+  "name": "@quantumqa/scripts",
+  "description": "One-off scripts for QuantumQA local development.",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "env:setup": "tsx ./src/setup-env.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@quantumqa/eslint-config": "*",
+    "@quantumqa/tsconfig": "*",
+    "chalk": "^5.3.0",
+    "tsx": "^4.7.1"
+  }
+}
