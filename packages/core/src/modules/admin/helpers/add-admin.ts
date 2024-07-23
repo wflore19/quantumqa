@@ -8,12 +8,7 @@ import { type AddAdminInput } from '../admin.types';
  * Dashboard. If an existing admin already exists with the same email, this will
  * return an `Error`.
  */
-export async function addAdmin({
-  email,
-  firstName,
-  isAmbassador,
-  lastName,
-}: AddAdminInput) {
+export async function addAdmin({ email, firstName, lastName }: AddAdminInput) {
   const existingAdmin = await db
     .selectFrom('admins')
     .where('email', 'ilike', email)
@@ -29,7 +24,6 @@ export async function addAdmin({
       email,
       firstName,
       id: id(),
-      isAmbassador,
       lastName,
     })
     .execute();
