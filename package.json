@@ -2,10 +2,11 @@
   "name": "quantumqa",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
     "lint": "turbo run lint",
-    "report": "turbo run report",
     "test": "turbo run test --cache-dir=.turbo",
+    "report": "turbo run report",
+    "build": "turbo run build --cache-dir=.turbo",
+    "build:apps": "yarn build --filter=./apps/*",
     "test:apps": "yarn test && yarn report --filter=./apps/*",
     "dev": "turbo run dev --cache-dir=.turbo",
     "dev:apps": "yarn dev --filter=./apps/*",
