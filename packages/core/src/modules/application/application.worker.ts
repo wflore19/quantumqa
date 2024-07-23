@@ -2,10 +2,9 @@ import { match } from 'ts-pattern';
 
 import { ApplicationBullJob } from '@/infrastructure/bull/bull.types';
 import { registerWorker } from '@/infrastructure/bull/helpers/register-worker';
-import { acceptApplication } from './helpers/accept-application';
-import { createApplication } from './helpers/create-application';
-import { rejectApplication } from './helpers/reject-application';
-// import { reviewApplication } from './helpers/review-application.ts';
+import { onApplicationAccepted } from '@/modules/application/jobs/application-accepted';
+import { onApplicationCreated } from '@/modules/application/jobs/application-created';
+import { onApplicationRejected } from '@/modules/application/jobs/application-rejected';
 
 export const applicationWorker = registerWorker(
   'application',
@@ -13,13 +12,13 @@ export const applicationWorker = registerWorker(
   async (job) => {
     return match(job)
       .with({ name: 'application.created' }, ({ data }) => {
-        return createApplication(data);
+        return onApplicationCreated(data);
       })
       .with({ name: 'application.accepted' }, ({ data }) => {
-        return acceptApplication(data);
+        return onApplicationAccepted(data);
       })
       .with({ name: 'application.rejected' }, ({ data }) => {
-        return rejectApplication(data);
+        return onApplicationRejected(data);
       })
       .exhaustive();
   }
