@@ -36,7 +36,7 @@ export type CreateFeatureFlagInput = z.infer<typeof CreateFeatureFlagInput>;
 
 export const EditFeatureFlagInput = FeatureFlag.pick({
   description: true,
-  displayName: true,
+  name: true,
   enabled: true,
 });
 
