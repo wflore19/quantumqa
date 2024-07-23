@@ -1,0 +1,17 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.rulers": [80],
+  "editor.quickSuggestions": { "strings": "on" },
+  "eslint.workingDirectories": ["./apps/*", "./config/*", "./packages/*"],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "tailwindCSS.experimental.configFile": "./config/tailwind/tailwind.config.js",
+  "tailwindCSS.experimental.classRegex": [
+    ["cx\\(([^)]+)\\)", "'([^']*)'"],
+    ["cx\\(([^)]+)\\)", "`([^`]*)`"]
+  ]
+}
