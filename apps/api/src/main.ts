@@ -1,12 +1,11 @@
+import { applicationWorker } from '@quantumqa/core/api';
 import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
 
-import {} from '@quantumqa/core/api';
-
 import { healthRouter } from './routers/health.router';
+import { ENV } from './utils/env';
 // import { oauthRouter } from './routers/oauth.router';
-import { ENV } from '../../../packages/core/src/utils/env';
 
 // Some API endpoints require access to the `req.rawBody` buffer field, which
 // is not available by default. We need to whitelist these endpoints so that
@@ -30,7 +29,7 @@ async function bootstrap() {
 }
 
 function initializeBullWorkers() {
-  // applicationWorker.run();
+  applicationWorker.run();
 }
 
 bootstrap();
