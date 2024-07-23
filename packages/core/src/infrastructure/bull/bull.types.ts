@@ -17,18 +17,10 @@ export const ApplicationBullJob = z.discriminatedUnion('name', [
   }),
   z.object({
     name: z.literal('application.created'),
-    data: z.object({
-      applicationId: Application.shape.id,
-    }),
+    data: Application,
   }),
   z.object({
     name: z.literal('application.rejected'),
-    data: z.object({
-      applicationId: Application.shape.id,
-    }),
-  }),
-  z.object({
-    name: z.literal('application.review'),
     data: z.object({
       applicationId: Application.shape.id,
     }),
