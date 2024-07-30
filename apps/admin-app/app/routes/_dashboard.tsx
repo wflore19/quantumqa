@@ -13,7 +13,7 @@ import {
   Video,
 } from 'react-feather';
 
-import { Route } from '@/utils/constants';
+import { Route } from '@/utils/routes';
 
 export default function DashboardLayout() {
   const pendingApplications = 0;
