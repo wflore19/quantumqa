@@ -1,4 +1,4 @@
-const ROUTES = ['/', '/hello-world'] as const;
+const ROUTES = ['/', '/login', '/signup', '/hello-world'] as const;
 
 export type Route = (typeof ROUTES)[number];
 
