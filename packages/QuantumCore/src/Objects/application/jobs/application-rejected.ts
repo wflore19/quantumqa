@@ -1,0 +1,8 @@
+import { db } from '@quantumqa/quantumdb';
+import { ApplicationStatus } from '@quantumqa/types';
+
+import { type GetBullJobData } from '@/infrastructure/bull/bull.types';
+
+export async function onApplicationRejected({
+  applicationId,
+}: GetBullJobData<'application.rejected'>) {}
