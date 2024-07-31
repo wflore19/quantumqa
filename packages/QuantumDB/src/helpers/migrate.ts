@@ -9,8 +9,8 @@ import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import { createDatabaseConnection } from './create-postgres-connection';
-import { type DB } from '../utils/types';
+import { createPostgresConnection } from './create-postgres-connection';
+import { type DB } from '../Tools/types';
 
 type MigrateOptions = {
   db?: Kysely<DB>;
@@ -37,7 +37,7 @@ export async function migrate(options: MigrateOptions = defaultOptions) {
     ...options,
   };
 
-  const db = options.db || createDatabaseConnection();
+  const db = options.db || createPostgresConnection();
 
   const migrator = new Migrator({
     db,

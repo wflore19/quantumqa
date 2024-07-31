@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export type OAuthProviderType = 'GOOGLE' | 'DISCORD';
+export type OAuthProviderType = 'GOOGLE' | 'DISCORD' | 'EMAIL';
 
 export interface OAuthService {
   exchangeCodeForToken(args: ExchangeCodeForTokenInput): Promise<OAuthTokens>;

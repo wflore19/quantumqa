@@ -1,7 +1,7 @@
 import { sql, type Transaction } from 'kysely';
 
-import { IS_PRODUCTION } from '../utils/env';
-import { type DB } from '../utils/types';
+import { IS_PRODUCTION } from '../Tools/env';
+import { type DB } from '../Tools/types';
 
 /**
  * Truncates all tables in the database - wiping all rows, but does not affect

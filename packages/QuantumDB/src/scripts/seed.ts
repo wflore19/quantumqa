@@ -4,9 +4,9 @@ import { z } from 'zod';
 
 import { migrate } from '../helpers/migrate';
 import { truncate } from '../helpers/truncate';
-import { db } from '../utils/db';
-import { IS_PRODUCTION } from '../utils/env';
-import { type DB } from '../utils/types';
+import { IS_PRODUCTION } from '../Tools/env';
+import { db } from '../Tools/postgres';
+import { type DB } from '../Tools/types';
 
 if (IS_PRODUCTION) {
   throw new Error('Cannot seed database in non-development environment.');
@@ -41,14 +41,13 @@ async function seed(trx: Transaction<DB>) {
   const personId1 = id();
 
   await trx
-    .insertInto('admin')
+    .insertInto('member')
     .values([
       {
-        id: personId1,
         email: 'wflore@umd.edu',
         firstName: 'Wilfredo',
         lastName: 'Flores',
-        gender: 'male',
+        authProvider: 'EMAIL',
       },
     ])
     .execute();

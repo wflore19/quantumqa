@@ -7,7 +7,7 @@ type GetMembersOptions<Selection> = {
 };
 
 export async function getFeatureFlag<
-  Selection extends SelectExpression<DB, 'featureFlags'>,
+  Selection extends SelectExpression<DB, 'featureFlag'>,
 >({ select, where }: GetMembersOptions<Selection>) {
   const flag = await db
     .selectFrom('featureFlags')

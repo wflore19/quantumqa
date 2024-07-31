@@ -2,22 +2,6 @@ import { type Kysely, sql } from 'kysely';
 
 export async function up(db: Kysely<any>): Promise<void> {
   // await db.schema
-  //   .createTable('admin')
-  //   .addColumn('id', 'text', (col) => col.primaryKey())
-  //   .addColumn('created_at', 'timestamp', (col) =>
-  //     col.defaultTo(sql`now()`).notNull()
-  //   )
-  //   .addColumn('updated_at', 'timestamp', (col) =>
-  //     col.defaultTo(sql`now()`).notNull()
-  //   )
-  //   .addColumn('deleted_at', 'timestamp')
-  //   .addColumn('email', 'text', (col) => col.notNull().unique())
-  //   .addColumn('first_name', 'text', (col) => col.notNull())
-  //   .addColumn('last_name', 'text')
-  //   .addColumn('gender', 'text', (col) => col.notNull())
-  //   .execute();
-
-  // await db.schema
   //   .createTable('application')
   //   .addColumn('id', 'text', (col) => col.primaryKey())
   //   .addColumn('created_at', 'timestamp', (col) =>
