@@ -1,5 +1,5 @@
 {
-  "name": "@quantumqa/admin-app",
+  "name": "@quantumqa/quantumadmin",
   "version": "0.0.0",
   "description": "the quantum qa admin gui",
   "type": "module",

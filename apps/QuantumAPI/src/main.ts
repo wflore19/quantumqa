@@ -1,4 +1,3 @@
-import { applicationWorker } from '@quantumqa/quantumcore/api';
 import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
@@ -29,7 +28,7 @@ async function bootstrap() {
 }
 
 function initializeBullWorkers() {
-  applicationWorker.run();
+  // applicationWorker.run();
 }
 
 bootstrap();

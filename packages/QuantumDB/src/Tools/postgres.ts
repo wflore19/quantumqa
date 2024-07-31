@@ -1,3 +1,3 @@
 import { createPostgresConnection } from '../helpers/create-postgres-connection';
 
-export const Postgres = createPostgresConnection();
+export const db = createPostgresConnection();
